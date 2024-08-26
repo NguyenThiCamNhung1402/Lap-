@@ -4,13 +4,17 @@ Created on Sun Aug 25 21:47:34 2024
 
 @author: Nguyễn Thị Cẩm Nhung - 23712471
 """
-a = int(input("Nhập số a: "))
-b = int(input("Nhập số b: "))
-c = int(input("Nhập số c: "))
+a, b, c = map(int, input("Nhập ba số (cách nhau bởi dấu cách): ").split())
 if a > b:
-    a, b = b, a
+    temp = a
+    a = b
+    b = temp
 if a > c:
-    a, c = c, a
+    temp = a
+    a = c
+    c = temp
 if b > c:
-    b, c = c, b
-print(a, b, c)
+    temp = b
+    b = c
+    c = temp
+print("Thứ tự tăng dần của 3 số:", a, b, c)
